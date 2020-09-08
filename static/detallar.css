@@ -1,0 +1,22 @@
+body{
+    margin-top: 85px;
+}
+
+
+.detalar{
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    background-color: red;
+    white-space: pre;
+}
+.detalul li{
+    white-space: pre;
+}
+
+
+.benzer{
+    text-align: center;
+}
+
+

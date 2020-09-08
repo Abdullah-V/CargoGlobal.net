@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'den.css' %}" type="text/css">
+    <style type="text/css">
+        .flexcon{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .flex{
+            height: 475px;
+            width: 290px;
+            background-color: rgb(119, 115, 115);
+            margin: 40px 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div id="flekskon">
+    {% for elan in elanlar %}
+<div id="fleks">
+    <p class="sigdir">Çıxış Yeri:</p>
+    <h1 class="sigdir cixcat">{{ elan.cixis_yeri|title }}</h1>
+    <p class="sigdir">Çixiş Vaxtı:</p>
+    <b><i class="sigdir">{{ elan.cixis_vaxti }}</i></b>
+    <p id="catmayer" class="sigdir">Çatma Yeri:</p>
+    <h1 class="sigdir cixcat">{{ elan.catma_yeri|title }}</h1>
+    <p class="sigdir">Çatma Vaxtı:</p>
+    <b><i class="sigdir">{{elan.catma_vaxti}}</i></b>
+    <a href="/detallar/{{ elan.id }}" class="etrafli">Ətraflı</a>
+    <a href="/favorit/{{elan.id}}" class="etrafli">Ulduzlu Elanlara Əlave Et/Sil</a>
+</div>
+    {% empty %}
+    <h1>Elan Yoxdur</h1>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+<!-- django pagination -->
+
+ 
+ <!-- <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Ilk</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Evvelki</a>
+        {% endif %}
+
+        <span class="current">
+          {{ page_obj.paginator.num_pages }}/{{ page_obj.number }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Sonraki</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Sonuncu &raquo;</a>
+        {% endif %}
+    </span>
+</div> 
+
+
+ -->
+
+
+<!-- bootstrap pagination -->
+
+
+<!-- <nav aria-label="Page navigation example">
+    <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+    {% endif %}
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      
+
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+ -->
+
+
+
+
+
+
+
+<!-- simpleisbetterthancomplex -->
+
+
+
+<!-- {% if is_paginated %}
+<nav>
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+    {% endif %}
+    {% for page in page_obj.page_range %}
+        <li class="page-item {% if page == page_obj.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+        </li>
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %} -->
+
+
+
+
+
+
+
+<!-- umid -->
+
+
+<!-- <div class="pagination">
+    {% if page_obj.has_previous %}
+        <a class="pagination-action" href="?page=1">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </a>
+        <a class="pagination-action" href="?page={{ page_obj.previous_page_number }}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+    {% endif %}
+    <span class="pagination-current">{{ page_obj.number }}</span>
+    <span class="pagination-of">of</span>
+    <span class="pagination-total">{{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}
+        <a class="pagination-action" href="?page={{ page_obj.next_page_number }}">
+            <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+        <a class="pagination-action" href="?page={{ page_obj.paginator.num_pages }}">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </a>
+    {% endif %}
+</div> -->
+
+
+
+
+
+{% endblock %}
+
+</body>
+</html>

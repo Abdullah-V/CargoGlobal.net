@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haqqinda</title>
+    <link rel="stylesheet" href="{% static 'haqqinda.css' %}">    
+</head>
+<body>
+{% block body %}
+
+
+<div class="haqqindagenel">
+    <h1 class="htaghaqqinda">Sayt Haqqında</h1>
+    <div class="haqqfleks">
+        <p>Bu Sayt Yükdaşıma Elanlarının yerləşdirilməsi üçün nəzərdə tutulmuşdur.</p>
+    </div>
+    <h1 class="htaghaqqinda">Dəstək</h1>
+    <div class="haqqfleks">
+        <p> <b> Saytı Paylaşmaq;</b> <br> <b>Sayt Haqqında Başqalarına Danışmaq;</b> <br> <b>Saytımıza Sponsor olmaq;</b> <br><b> (Əgər varsa) Saytdakı reklamlara klikləmək </b> <br> Bunları edərək bizə dəstək ola bilərsiniz.</p>
+    </div>
+    <h1 class="htaghaqqinda">Əlaqə</h1>
+    <div class="haqqfleks">
+        <h3>Gmail</h3>
+        <div>
+        <h4><i class="fas fa-envelope" style="margin-right: 10px;"></i>abdullahveliyev2005@gmail.com</h4>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

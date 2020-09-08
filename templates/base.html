@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta name="language" content="az-AZ"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=SITE_MIN_WIDTH, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Kargo Elanlari,Lojistik Elanlari,Yükdaşıma Elanlarını"/>
+    <meta name="keywords" content="elan,lojistik,kargo,tır,yük maşını,yükdaşıma elanlarını" />
+    <meta name="revisit-after" content="1 days">
+    <meta name="rating" content="general" />
+    <meta name="author" content="Abdullah Vəliyev" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+    <meta name=”robots” content="index, follow">
+
+    <title>CargoGlobal.com</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'elanlar.css' %}">
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="{% static 'detallar.css' %}">
+    <link rel="stylesheet" href="{% static 'komek.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'haqqinda.css' %}">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!-- sonra -->
+    <!-- CSS only -->
+<style type="text/css">
+    
+ 
+
+
+.yukarigit{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #343a40;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    outline: none;
+    font-size: 15px;
+    z-index: 2;
+
+}
+.yukarigit a{
+    text-decoration: none;
+    color: white;    
+    z-index: 2;
+
+}
+.asagigit{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #343a40;
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    outline: none;
+    font-size: 15px;
+    z-index: 2;
+
+}
+.asagigit a{
+    text-decoration: none;
+    color: white;
+    z-index: 2;
+}
+
+::selection{
+    background-color: rgb(0, 0, 0);
+    color: rgb(123, 255, 167);
+}
+
+body{
+
+    margin: 70px 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background:linear-gradient(black,rgb(40, 39, 47)) ;
+    color:white;
+    position: relative;
+    top: 69px;
+}
+
+.footerspan {
+  position: relative;
+  left: -20px;
+  top: 32px;  
+}
+.success{
+  margin-right: 90px;
+}
+
+#scrolldiv{
+    height: 10px;
+    width: 0%;
+    background-color: rgb(255, 154, 60);
+    position: absolute;
+    top: 56px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.gticon{
+  text-decoration: none;
+  position: relative;
+  color: white;
+  top: 34px;
+  font-size: 30px;
+  left: 20px;
+  
+}
+
+
+.haqqindagenel{
+  font-size: 18px;
+}
+
+/* scrollbar */
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">CargoGlobal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Elanlar</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/elaveet">Əlave Et</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/menimelanlarim">Mənim Elanlarım</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="/hesablar/qeydiyyat">Əlave Et</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/hesablar/qeydiyyat">Mənim Elanlarım</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="/favelanlarim">Ulduzlu Elanlar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/komek">Kömək</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="/haqqinda">Haqqında</a>
+              </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Diger
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if not request.user.is_authenticated %}
+                <a class="dropdown-item" href="/hesablar/giris">Giris</a>
+                <a class="dropdown-item" href="/hesablar/qeydiyyat">Qeydiyyatdan Kec</a>
+                {% else %
+                <a class="dropdown-item" href="/hesablar/cixis">Cixis</a>
+                {% endif %}
+                
+              </div>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Diger
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if not request.user.is_authenticated %}
+                <a class="dropdown-item" href="/hesablar/giris">Giriş</a>
+                <a class="dropdown-item" href="/hesablar/qeydiyyat">Qeydiyyatdan Keç</a>
+                {% else %}
+                
+                <a class="dropdown-item" href="/hesablar/cixis">Çıxış</a>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+          <form role="search" method="GET" class="form-inline my-2 my-lg-0">
+            <input id="ajaxsearch" class="form-control mr-sm-2" type="text" name = "query" placeholder="Ölkə,Şəhər və ya Vaxt ..." aria-label="Search" value="{{request.GET.query}}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+          </form>
+        </div>
+      </nav>
+      <div id="scrolldiv"></div>
+      <button class="yukarigit"><a href="#top"><i class="fas fa-arrow-up"></i></a></button>
+      <button class="asagigit"><a href="#footer"><i class="fas fa-arrow-down"></i></a></button>
+
+    {% block body %}
+
+
+    {% endblock %}
+
+    
+  
+    <div class="footer" title="Abdullah Vəliyev Tərəfindən Hazırlanmışdır" id="footer"><span class="footerspan">Abdullah Vəliyev Tərəfindən Hazırlanmışdır</span><a href="https://github.com/Abdullah-V" target="_blank"><i title="Saytın Githubdakı Kodları və Github Hesabım" class="fab fa-github gticon"></i></a></div>
+   
+   <script src="{% static 'sayt.js' %}"></script> 
+
+</body>
+</html>
+
+
+
+
+
+
+

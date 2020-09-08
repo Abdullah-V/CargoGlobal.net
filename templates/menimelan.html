@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'elanlar.css' %}" type="text/css">
+</head>
+<body>
+    {% block body %}
+    <div id="flekskon">
+        {% for elan in requserelan %}
+    <div id="fleks">
+        <p class="sigdir">Çıxış Yeri:</p>
+        <h1 class="sigdir cixcat">{{elan.cixis_yeri|title}}</h1>
+        <p class="sigdir">Çıxıs Vaxtı:</p>
+        <b><i class="sigdir">{{elan.cixis_vaxti}}</i></b>
+        <p id="catmayer" class="sigdir">Çatma Yeri:</p>
+        <h1 class="sigdir cixcat">{{elan.catma_yeri|title}}</h1>
+        <p class="sigdir">Çatma Vaxtı:</p>
+        <b><i class="sigdir">{{elan.catma_vaxti}}</i></b>
+        <a href="/detallar/{{ elan.id }}" class="etrafli">Ətraflı</a>
+    <div class="silduzdiv">
+        <a href="/deyisdir/{{ elan.id }}" class="etrafli deyisdir">Dəyişdir</a><button onclick="confir('{{elan.id}}')" class="etrafli sil">Sil</button>
+    </div>
+    </div>
+    {% empty %}
+    <h1>Elanınız Yoxdur.Amma <a href="/elaveet">Buradan </a>Əlave Edə Bilərsiniz</h1>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
+</html>
+

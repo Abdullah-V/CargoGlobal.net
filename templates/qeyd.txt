@@ -1,0 +1,537 @@
+**(sorry for my bad english)
+i had tried add scroll trigger to my django site.okey this is working all urls another "/help" url.there my js scroll events codes:**
+```
+var bar = document.querySelector("#scrolldiv")
+console.log(bar)
+window.addEventListener("scroll",() => {
+    var max = document.body.scrollHeight - innerHeight
+    bar.style.width = `${(pageYOffset/max) *100}%`
+    console.log(pageYOffset);
+})
+```
+**bar varriable in base.html:**
+```
+ <div id="scrolldiv"></div>
+```
+**here all base.html codes:**
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojistik.com</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'elanlar.css' %}">
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="{% static 'detallar.css' %}">
+    <link rel="stylesheet" href="{% static 'komek.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'haqqinda.css' %}">
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!-- sonra -->
+    <!-- CSS only -->
+<style type="text/css">
+    
+.yukarigit{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #343a40;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    outline: none;
+    font-size: 15px;
+    z-index: 2;
+
+}
+.yukarigit a{
+    text-decoration: none;
+    color: white;    
+    z-index: 2;
+
+}
+.asagigit{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: #343a40;
+    position: fixed;
+    left: 40px;
+    bottom: 40px;
+    outline: none;
+    font-size: 15px;
+    z-index: 2;
+
+}
+.asagigit a{
+    text-decoration: none;
+    color: white;
+    z-index: 2;
+}
+
+::selection{
+    background-color: rgb(0, 0, 0);
+    color: rgb(123, 255, 167);
+}
+
+body{
+
+    margin: 70px 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background:linear-gradient(black,rgb(40, 39, 47)) ;
+    color:white;
+    position: relative;
+    top: 69px;
+}
+
+.footerspan {
+  position: relative;
+  left: -20px;
+  top: 32px;  
+}
+.success{
+  margin-right: 90px;
+}
+
+#scrolldiv{
+    height: 10px;
+    width: 0%;
+    background-color: rgb(255, 154, 60);
+    position: absolute;
+    top: 56px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.gticon{
+  text-decoration: none;
+  position: relative;
+  color: white;
+  top: 34px;
+  font-size: 30px;
+  left: 20px;
+  
+}
+
+
+/* scrollbar */
+
+
+#style-7::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-7::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">. . .</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Elanlar</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/elaveet">Əlave Et</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/menimelanlarim">Mənim Elanlarım</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="/hesablar/qeydiyyat">Əlave Et</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/hesablar/qeydiyyat">Mənim Elanlarım</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="/favelanlarim">Ulduzlu Elanlar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/komek">Kömək</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="/haqqinda">Haqqında</a>
+              </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Diger
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if not request.user.is_authenticated %}
+                <a class="dropdown-item" href="/hesablar/giris">Giris</a>
+                <a class="dropdown-item" href="/hesablar/qeydiyyat">Qeydiyyatdan Kec</a>
+                {% else %
+                <a class="dropdown-item" href="/hesablar/cixis">Cixis</a>
+                {% endif %}
+                
+              </div>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Diger
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if not request.user.is_authenticated %}
+                <a class="dropdown-item" href="/hesablar/giris">Giriş</a>
+                <a class="dropdown-item" href="/hesablar/qeydiyyat">Qeydiyyatdan Keç</a>
+                {% else %}
+                
+                <a class="dropdown-item" href="/hesablar/cixis">Çıxış</a>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+          <form role="search" method="GET" class="form-inline my-2 my-lg-0">
+            <input id="ajaxsearch" class="form-control mr-sm-2" type="text" name = "query" placeholder="Ölkə,Şəhər və ya Vaxt ..." aria-label="Search" value="{{request.GET.query}}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+          </form>
+        </div>
+      </nav>
+      <div id="scrolldiv"></div>
+      <button class="yukarigit"><a href="#top"><i class="fas fa-arrow-up"></i></a></button>
+      <button class="asagigit"><a href="#footer"><i class="fas fa-arrow-down"></i></a></button>
+
+    {% block body %}
+
+
+    {% endblock %}
+
+    
+  
+    <div class="footer" title="Made by Abdullah Vəliyev" id="footer"><span class="footerspan">Made by Abdullah Vəliyev</span><a href="https://github.com" target="_blank"><i title="Layihenin Githubdaki Kodlari ve Github Hesabim" class="fab fa-github gticon"></i></a></div>
+   
+   <script src="{% static 'sayt.js' %}"></script> 
+
+</body>
+</html>
+
+```
+
+
+
+**and there my "/help" url template:**
+```
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komek</title>
+    <link rel="stylesheet" href="{% static 'komek.css' %}" type="text/css">
+    <script src="{% static 'sayt.js' %}"></script> 
+</head>
+<body>
+    {% block body %}
+    <div class="komekgenel">
+    <h1 class="komekbasliq">Elanlar Sehifesi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Burada En son elanlar olur.etrafli ve ulduzla olaraq iki secim var</p>
+</div>
+    <img src="{% static 'butun.png' %}" alt="Sekil" class="komeksekil">
+    <img src="{% static 'ulduzelave.png' %}" alt="Sekil" class="komeksekil">
+    <img src="{% static 'ulduzsil.png' %}" alt="Sekil" class="komeksekil">
+
+
+    <h1 class="komekbasliq">Detallar Sehifesi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Buarada Elan Haqqinda Etrafli Melumat onun altinda ise secdiyiniz elan ile benzer olan elanlar var.</p>
+</div>
+    <img src="{% static 'etrafli.png' %}" alt="Sekil" class="komeksekil">
+    <hr>
+    <img src="{% static 'benzer.png' %}" alt="Sekil" class="komeksekil">
+
+
+    <h1 class="komekbasliq">Elave Etme Sehifesi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Buardan pulsuz ve say mehdudiyyati olamdan elan yerlesdire bilersiniz(kohne elanlarin silinmesi meqsedi ile elanlar paylasildiqdan 10 gun sonra silinir)(elan elave etmek ucun qeydiyyatdan kecmelisiniz)</p>
+</div>
+    <img src="{% static 'elaveet.png' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Menim Elanlarim Sehifesi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Sizin butun elanlariniz buarda olur.buradam elanlarinizi deyisdire ve ya sile bilersiniz.(bu sehifeni gormek ucun qeydiyyatdan kecmelisiniz)</p>
+</div>
+    <img src="{% static 'menim.png' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Ulduzlu Elanlar Sehifesi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Ulduzlu elanlariniz burada olur.(bunun ucun qeydiyyatdan kecmelisiniz)</p>
+</div>
+    <img src="{% static 'ulduzlu.png' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Komek Sehifesi</h1>
+    <div class="pardiv">
+
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Haqqinda Sehifesi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis omnis sint culpa ex dolor a, rem amet doloribus tempora error! Suscipit iusto debitis aspernatur exercitationem explicabo dolorum accusantium veniam odit?</p>
+</div>
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Diger</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis omnis sint culpa ex dolor a, rem amet doloribus tempora error! Suscipit iusto debitis aspernatur exercitationem explicabo dolorum accusantium veniam odit?</p>
+</div>
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Qeydiyyat</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis omnis sint culpa ex dolor a, rem amet doloribus tempora error! Suscipit iusto debitis aspernatur exercitationem explicabo dolorum accusantium veniam odit?</p>
+</div>
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Giris</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis omnis sint culpa ex dolor a, rem amet doloribus tempora error! Suscipit iusto debitis aspernatur exercitationem explicabo dolorum accusantium veniam odit?</p>
+</div>
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Cixis</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis omnis sint culpa ex dolor a, rem amet doloribus tempora error! Suscipit iusto debitis aspernatur exercitationem explicabo dolorum accusantium veniam odit?</p>
+</div>
+    <img src="{% static 'gece.jpg' %}" alt="Sekil" class="komeksekil">
+
+    <h1 class="komekbasliq">Searchbox</h1>
+    <div class="pardiv">
+    <p class="komekpar">Buradan olkeye,sehere,vaxta gore axtaris ede bilersiniz</p>
+    </div>
+    <img src="{% static 'search.png' %}" alt="Sekil" class="komeksekil">
+</div>
+
+{% endblock %}
+<script src="{% static 'sayt.js' %}"></script> 
+
+</body>
+</html>
+```
+**scroll event is not working this template.but working another templates.why i do false?please help me guys.please...
+thanks now.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="komekgenel">
+    <h1 class="komekbasliq">Elanlar Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Burada ən son elanlar olur.Ətrafli ve ulduzla olaraq iki seçim var</p>
+</div>
+
+
+    <h1 class="komekbasliq">Detallar Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Buarada Elan Haqqinda Etrafli Melumat onun altinda ise secdiyiniz elan ile benzer olan elanlar var.</p>
+</div>
+    <hr>
+
+
+    <h1 class="komekbasliq">Elan Əlave Etme Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Buardan pulsuz ve say məhdudiyyəti olmadan elan yerleşdire bilərsiniz(köhne elanlarin silinməsi məqsədilə elanlar paylaşıldıqdan 10 gün sonra silinir)(elan əlavə etmek üçün qeydiyyatdan keçməlisiniz)</p>
+</div>
+
+    <h1 class="komekbasliq">Menim Elanlarim Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Sizin bütün elanlarınız burada olur.buradan elanlarınızı dəyisdirə və ya silə bilərsiniz.(bu sehifeni gormek ucun qeydiyyatdan kecmelisiniz)</p>
+</div>
+
+    <h1 class="komekbasliq">Ulduzlu Elanlar Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Ulduzlu elanlarınız burada olur.(bunun üçün qeydiyyatdan keçməlisiniz)</p>
+</div>
+
+    <h1 class="komekbasliq">Haqqında Səhifəsi</h1>
+    <hr>
+    <div class="pardiv">
+    <p class="komekpar">Sayt Haqqında Məlumatlar</p>
+</div>
+
+    <h1 class="komekbasliq">Digər</h1>
+    <hr>
+    <div class="pardiv">
+
+    <p class="komekpar">Əgər hesabınıza daxil olmusunuzsa burada "Çıxış" düyməsini,yox əgər olmamısınızsa burada "Giriş" və "Qeydiyyatdan Keç" düymələrini görəcəksiniz.</p>
+</div>
+
+    <h1 class="komekbasliq">Qeydiyyat</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Buradan yeni hesab aça bilərsiniz.</p>
+</div>
+
+    <h1 class="komekbasliq">Giriş</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Əgər hesabınız varsa buradan hesabınıza daxil ola bilərsiniz.</p>
+</div>
+
+    <h1 class="komekbasliq">Çıxış</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Bu düyməyə basaraq hesabınızdan çıxa bilərsiniz.</p>
+</div>
+
+    <h1 class="komekbasliq">Axtarış Qutusu</h1>
+    <div class="pardiv">
+    <p class="komekpar">Buradan ölkəyə,səhərə,vaxta görə axtarış edə bilərsiniz</p>
+    </div>
+</div>

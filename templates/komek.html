@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komek</title>
+    <link rel="stylesheet" href="{% static 'komek.css' %}" type="text/css">
+</head>
+<body>
+    {% block body %}
+    
+    <h1 class="komekbasliq">Elanlar Səhifəsi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Burada ən son elanlar olur.Ətraflı ve ulduzla olaraq iki seçim var</p>
+</div>
+<hr>
+
+    <h1 class="komekbasliq">Detallar Səhifəsi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Buarada Elan Haqqında Ətrafli Məlumat onun altında isə seçdiyiniz elan ilə bənzər olan elanlar var.</p>
+</div>
+<hr>
+
+
+    <h1 class="komekbasliq">Elan Əlave Etme Səhifəsi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Buradan pulsuz və say məhdudiyyəti olmadan elan yerleşdire bilərsiniz(köhnə elanların silinməsi məqsədilə elanlar paylaşıldıqdan 10 gün sonra silinir)(elan əlavə etmek üçün qeydiyyatdan keçməlisiniz)</p>
+</div>
+<hr>
+    <h1 class="komekbasliq">Mənim Elanlarım Səhifəsi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Sizin bütün elanlarınız burada olur.buradan elanlarınızı dəyisdirə və ya silə bilərsiniz.(bu sehifeni gormek ucun qeydiyyatdan kecmelisiniz)</p>
+</div>
+<hr>
+    <h1 class="komekbasliq">Ulduzlu Elanlar Səhifəsi</h1>
+    <div class="pardiv">
+
+    <p class="komekpar">Ulduzlu elanlarınız burada olur.(bunun üçün qeydiyyatdan keçməlisiniz)</p>
+</div>
+<hr>
+
+<h1 class="komekbasliq">Haqqında Səhifəsi</h1>
+
+<div class="pardiv">
+<p class="komekpar">Sayt Haqqında Məlumatlar</p>
+</div>
+<hr>
+
+<h1 class="komekbasliq">Digər</h1>
+<div class="pardiv">
+
+<p class="komekpar">Əgər hesabınıza daxil olmusunuzsa burada "Çıxış" düyməsini,yox əgər olmamısınızsa burada "Giriş" və "Qeydiyyatdan Keç" düymələrini görəcəksiniz.</p>
+</div>
+<hr>
+
+
+
+
+
+<h1 class="komekbasliq">Qeydiyyat</h1>
+<div class="pardiv">
+<p class="komekpar">Buradan yeni hesab aça bilərsiniz.</p>
+</div>
+
+
+
+
+<h1 class="komekbasliq">Giriş</h1>
+<div class="pardiv">
+
+<p class="komekpar">Əgər hesabınız varsa buradan hesabınıza daxil ola bilərsiniz.</p>
+</div>
+
+
+
+
+
+<h1 class="komekbasliq">Çıxış</h1>
+<div class="pardiv">
+
+<p class="komekpar">Bu düyməyə basaraq hesabınızdan çıxa bilərsiniz.</p>
+</div>
+
+
+
+<h1 class="komekbasliq">Axtarış Qutusu</h1>
+<div class="pardiv">
+<p class="komekpar">Buradan ölkəyə,səhərə,vaxta görə axtarış edə bilərsiniz</p>
+</div>
+
+{% endblock %}
+<script src="{% static 'sayt.js' %}"></script> 
+
+</body>
+</html>

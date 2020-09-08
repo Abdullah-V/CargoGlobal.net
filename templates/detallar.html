@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'elanlar.css' %}">
+    <style>
+        .benzer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="detallar">
+    <ul class="detalul">
+        <li>Çıxış Yeri                       {{detalelan.cixis_yeri|title}}</li>
+        <hr>
+        <li>Çatma Yeri                    {{detalelan.catma_yeri|title}}</li>
+        <hr>
+        <li>Çixiş Vaxtı                    {{detalelan.cixis_vaxti}}</li>
+        <hr>
+        <li>Çatma Vaxtı                 {{detalelan.catma_vaxti}}</li>
+        <hr>
+        <li>Telefon Nömrəsi           +{{detalelan.elaqe_nomresi}}</li>
+        <hr>
+        {% if detalelan.sirket %}
+        <li>Şirkət                      {{detalelan.sirket}}</li>
+        <hr>
+        {% endif %}
+        {% if detalelan.elave_melumatlar %}
+        <li>Əlavə Məlumatlar:</li>
+        <hr>
+        <div class="elavemel">
+        <p>{{ detalelan.elave_melumatlar|linebreaks }}</p>
+        </div>
+        <hr>
+        {% endif %}
+    </ul>
+</div>
+
+{% if sayi %}
+<h1 class="benzer">Bənzər Elanlar</h1>
+<div id="flekskon">
+    {% for elan in elanlar %}
+<div id="fleks">
+    <p class="sigdir">Çıxış Yeri</p>
+    <h1 class="sigdir cixcat">{{elan.cixis_yeri|title}}</h1>
+    <p class="sigdir">Çıxış Vaxtı:</p>
+    <b><i class="sigdir">{{elan.cixis_vaxti}}</i></b>
+    <p id="catmayer" class="sigdir">Çatma Yeri:</p>
+    <h1 class="sigdir cixcat">{{elan.catma_yeri|title}}</h1>
+    <p class="sigdir">Çatma Vaxtı:</p>
+    <b><i class="sigdir">{{elan.catma_vaxti}}</i></b>
+    <a href="/detallar/{{ elan.id }}" class="etrafli">Ətraflı</a>
+    <a href="/favorit/{{elan.id}}" class="etrafli">Ulduzlu Elanlara Əlave Et/Sil</a>
+</div>
+    {% endfor %}
+</div>
+{% else %}
+<h1 class="benzer">Bənzər Elan Yoxdur</h1>
+{% endif %}
+{% endblock %}
+</body>
+</html>
+

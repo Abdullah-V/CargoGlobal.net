@@ -1,0 +1,39 @@
+
+.komekbasliq{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 30px 0px;
+
+}
+.komeksekil{
+    width: 100%;
+    height: 600px;
+}
+
+.komekpar{
+    width: 50%;
+    text-align: center;
+    font-size: 26px;
+}
+
+.pardiv{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.komekgenel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: url("aysekli.jpg"); */
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    top: 50px;
+}
+

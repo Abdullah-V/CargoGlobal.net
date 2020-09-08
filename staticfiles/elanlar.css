@@ -1,0 +1,76 @@
+body{
+    margin: 50px 0px;
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+#flekskon{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#fleks{
+    height: 465px;
+    width: 280px;
+    background: linear-gradient(rgb(170, 176, 197),  white );
+    margin: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 15px  rgb(0, 0, 0);
+    align-content: center;
+    border: 1px;
+    box-sizing: border-box;
+}
+#catmayer{
+    margin-top: 10px;
+}
+
+
+.etrafli{
+    margin-top: 21px;
+    color: #343a40;
+    padding: 9px 15px;
+    border-radius: 5px;
+    border: 2px solid #343a40;
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    margin: 8px 0px;
+}
+
+.etrafli:hover{
+    text-decoration: none;
+    background-color: #343a40;
+    color: white;
+}
+
+
+.sigdir{
+    box-sizing: border-box;
+}
+
+.cixcat{
+    font-size: 27px;
+}
+
+.success{
+    background-color: #93ce5b;
+    font-size: 28px;
+    text-align: center;
+    font-weight: lighter;
+    list-style: none;
+}
+
+.silduz{
+    display: inline-block;
+}
+
+.elavemel{
+    width: 400px;
+    list-style: none;
+}
+
+
+
+
