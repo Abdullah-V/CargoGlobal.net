@@ -1,4 +1,5 @@
 # CargoGlobal.net
-### CargoGlobal.net Sayti
-#### Bu Sayt Yukdasima Elanlarinin Yerlesdirilmesi ucundur.
+### CargoGlobal.net Saytı
+#### Bu Sayt Yükdaşıma Elanlarının Yerləşdirilməsi üçündür.
 #### https://cargoglobal.pythonanywhere.com/
+##### Sayt "BSD 3-Clause License" Lisenziyası altında yayımlanmışdır.
